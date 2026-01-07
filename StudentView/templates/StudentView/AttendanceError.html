@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Error - College Attendance Portal</title>
+    <link rel="stylesheet" href="{% static 'StudentView/submitted.css' %}" />
+    <style>
+      .error-icon {
+        font-size: 64px;
+        color: #dc3545;
+        margin-bottom: 20px;
+      }
+      .error-message {
+        color: #dc3545;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .info-message {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .back-button {
+        margin-top: 30px;
+        padding: 12px 30px;
+        background-color: #2d8659;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+      }
+      .back-button:hover {
+        background-color: #1a5f3a;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-title">Department of Intelligent Systems</h1>
+      <h2>Attendance Portal</h2>
+    </header>
+
+    <div class="container">
+      <div class="error-icon">⚠️</div>
+      <h2 class="error-message">Attendance Marking Failed</h2>
+      <div class="info-message">
+        <p>{{ error_message }}</p>
+        <br />
+        <p><strong>Attendance Policy:</strong></p>
+        <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+          <li>You can only mark attendance once every 2 hours</li>
+          <li>Each IP address can only be used once per session</li>
+          <li>Proxy attendance is strictly prohibited</li>
+        </ul>
+      </div>
+      <a href="javascript:window.close()" class="back-button">Close Window</a>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; QR Attendance System 2023 - Team DIS - AI Division</p>
+    </footer>
+  </body>
+</html>
+
